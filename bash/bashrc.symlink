@@ -1,0 +1,28 @@
+#       _/                            _/
+#      _/_/_/      _/_/_/    _/_/_/  _/_/_/    _/  _/_/    _/_/_/
+#     _/    _/  _/    _/  _/_/      _/    _/  _/_/      _/
+#    _/    _/  _/    _/      _/_/  _/    _/  _/        _/
+#   _/_/_/      _/_/_/  _/_/_/    _/    _/  _/          _/_/_/
+#
+
+
+# Make an easy command to reload the profile and bashrc file.
+
+	alias reload=". $HOME/.profile"
+
+
+# Load supporting files.
+
+	[[ -s $HOME/dotfiles/bash/colors.sh ]] && . $HOME/dotfiles/bash/colors.sh
+
+# And last, but certainly not least, create a useable prompt.
+
+	GIT_PS1_SHOWDIRTYSTATE=true
+	GIT_PS1_SHOWUNTRACKEDFILES=true
+	PS1prefix=""
+	PS1userhost="$txtpur\u@\h$txtrst"
+	PS1path=" $txtblu\w$txtrst"
+	PS1git="$txtcyn\$(__git_ps1)$txtrst"
+	PS1prompt="\n$ "
+
+	export PS1="$PS1prefix$PS1userhost$PS1git$PS1path$PS1prompt"
