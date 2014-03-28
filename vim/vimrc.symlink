@@ -1,0 +1,209 @@
+"                 _/
+"    _/      _/      _/_/_/  _/_/    _/  _/_/    _/_/_/
+"   _/      _/  _/  _/    _/    _/  _/_/      _/
+"    _/  _/    _/  _/    _/    _/  _/        _/
+"     _/      _/  _/    _/    _/  _/          _/_/_/
+"
+"   A very nice set of Vim settings.
+"   --------------------------------
+
+
+" Set nocompatible mode. (not vi)
+
+  set nocompatible
+
+
+" Vundle! Manages your vim plugins. (See https://github.com/gmarik/vundle).
+
+  filetype off
+
+  set rtp+=~/.vim/bundle/vundle/
+  call vundle#rc()
+
+  " Load Vundle itself.
+  Bundle "gmarik/vundle"
+
+  " Convert gui color Scheme to term
+  Bundle "vim-scripts/guicolorscheme.vim"
+
+  " DesertEx
+  Bundle "vim-scripts/desertEx"
+
+  " Solarized
+  Bundle "altercation/vim-colors-solarized"
+
+  " Tim Pope
+  Bundle "tpope/vim-fugitive"
+  Bundle "tpope/vim-commentary"
+
+  " Niceties
+  Bundle "Lokaltog/vim-powerline"
+  Bundle "sjl/gundo.vim"
+  Bundle "scrooloose/nerdtree"
+  Bundle "airblade/vim-gitgutter"
+  Bundle "mattn/webapi-vim"
+  Bundle "kien/ctrlp.vim"
+  Bundle "scrooloose/syntastic"
+
+  Bundle "Raimondi/delimitMate"
+    " By default, delimitMate clobbers Vim's timeout settings. This
+    " causes a huge delay when trying to exit insert or visual mode
+    " while in the terminal. Setting this option to 1 fixes that.
+    let g:delimitMate_no_esc_mapping = 1
+
+  Bundle "kchmck/vim-coffee-script"
+  Bundle 'vim-scripts/grails-vim'
+  Bundle "vim-scripts/groovy.vim"
+  Bundle "groenewege/vim-less"
+
+
+" Enable syntax highlighting and filetype detection.
+
+  filetype plugin indent on
+  syntax enable
+
+
+" The colorscheme is desertEx can be toggled on/off by hitting <F5>.
+
+  set background=dark
+  colorscheme desertEx 
+
+  " Modifications
+  highlight SignColumn ctermbg=8
+  highlight EasyMotionShade ctermfg=0
+  highlight IndentGuidesOdd ctermbg=8
+  highlight IndentGuidesEven ctermbg=0
+
+  let s:comments_normal_contrast = 1
+  noremap <F7> :call <SID>ToggleCommentContrast()<CR>
+  function <SID>ToggleCommentContrast()
+    if s:comments_normal_contrast == 1
+      hi Comment ctermfg=0
+      let s:comments_normal_contrast = 0
+    else
+      hi Comment ctermfg=10
+      let s:comments_normal_contrast = 1
+    endif
+  endfunction
+
+
+" Highlight extraneous whitespace as red.
+
+  if has("autocmd")
+    augroup whitespace
+      au BufWinEnter * let w:m1=matchadd("ErrorMsg", '\s\+$', -1)
+    augroup END
+  endif
+
+
+" Change the leader key from "\" to ",". The leader key is used when
+" defining custom shortcut keys to speed up some actions.
+
+  let mapleader = ","
+
+
+" These settings make escaping insert and visual modes much faster when
+" using Vim in the terminal.
+
+  set notimeout
+  set ttimeout
+  set ttimeoutlen=10
+
+
+" Set some sane and reasonable defaults.
+
+  set shell=/bin/sh
+  set autoread                       " Don't ask me about loading files.
+  set hidden                         " Handle multiple buffers better.
+  set relativenumber                 " Show relative line numbers.
+  set number                         " Show the line number on the current
+                                     "   line.
+  set nowrap                         " Don't wrap lines.
+  set showcmd                        " Display incomplete commands.
+  set backspace=indent,eol,start     " Intuitive backspacing.
+  set wildmenu                       " Enhanced command line completion.
+  set wildmode=list:longest          " Complete files like a shell.
+  set completeopt=menu,preview       " Show the completion menu along with
+                                     "   preview information.
+  set hlsearch                       " Highlight matches.
+  set incsearch                      " Highlight matches as you type.
+  set ignorecase                     " Case-insensitive searching.
+  set smartcase                      " But case-sensitive if expression
+                                     "   contains capitals.
+  set smartindent                 " automatically handle indentation
+  set expandtab                   " use spaces instead of hard tabs
+  set spelllang=en_us                " U.S. English is the default language.
+  set spellfile=$HOME/.vim/spell/en.utf-8.add
+                                     " Define where to store the spellfile
+  set numberwidth=5                  " Line numbers are at least 5 characters
+                                     "   wide.
+  set cursorline                     " Show the cursor's line.
+  set cursorcolumn                   " Show the cursor's column
+  set textwidth=80
+  set colorcolumn=-8,-7,-6,-5,-4,-3,-2,-1,-0
+  set scrolloff=3                    " Show 3 lines of context around the
+                                     "   cursor.
+  set laststatus=2                   " Show the status line all the time
+  set visualbell                     " No beeping.
+  set nobackup                       " Don't make a backup before overwriting
+                                     "   a file.
+  set noswapfile                     " No swap files.
+  set nowritebackup                  " And again.
+  set undofile                       " Store persistent undo's.
+  set undodir=$HOME/.vim/undo        " Set where to store undo's.
+  set nofoldenable                   " Don't fold code by default.
+  set nomodeline                     " No modelines for security reasons.
+  set ts=2 sts=2 sw=2 expandtab      " Default setting for tabs (2 spaces).
+  set omnifunc=syntaxcomplete#Complete
+                                     " Turn on omnicompletion.
+
+" quick edit and source .vimrc
+  let mapleader = ","
+  nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+  nnoremap <leader>sv :source $MYVIMRC<cr>
+
+" disable the arrow keys in vim
+
+  noremap <Up> <nop>
+  noremap <Down> <nop>
+  noremap <Left> <nop>
+  noremap <Right> <nop>
+  inoremap <Up> <nop>
+  inoremap <Down> <nop>
+  inoremap <Left> <nop>
+  inoremap <Right> <nop>
+
+" Natural up/down movement with wrapped lines.
+
+  nmap j gj
+  nmap k gk
+
+" Wwindow switching without pressing 'w'.
+
+  nnoremap <C-h> <C-w>h
+  nnoremap <C-j> <C-w>j
+  nnoremap <C-k> <C-w>k
+  nnoremap <C-l> <C-w>l
+
+" Some filetypes need some special settings.
+
+  if has("autocmd")
+    augroup filetypes
+      au!
+      au BufNewFile,BufRead *.md   setlocal filetype=markdown spell
+      au Filetype gitcommit        setlocal spell
+    augroup END
+  endif
+
+" Gundo is a plugin that allows for easy browsing of the undo history
+" tree. I find this so useful and I use it so often that I want to map
+" it to <leader>g for easy browsing.
+
+  noremap <Leader>g :GundoToggle<CR>
+
+
+" Map a shortcut for NERDTree.
+
+  inoremap <Leader>N :NERDTree
+  noremap <F2> :NERDTreeToggle<CR>
+

@@ -1,0 +1,51 @@
+# Use ctrl-space as tmux's prefix command.
+
+  unbind-key C-b
+  set -g prefix C-Space
+  bind C-Space send-prefix
+
+
+# Set TERM up so that VIM colors look correct.
+
+  set -g default-terminal "screen-256color"
+
+
+# Fix escape key issues.
+
+  set -g escape-time 0
+
+
+# Set a history limit.
+
+  set -g history-limit 2000
+
+
+# Have window and pane numbers start at 1 instead of 0.
+
+  set -g base-index 1
+  set -g pane-base-index 1
+
+
+# Set up Vim-like keybindings.
+
+  set -g mode-keys vi
+  unbind h
+  unbind j
+  unbind k
+  unbind l
+  bind h select-pane -L
+  bind j select-pane -D
+  bind k select-pane -U
+  bind l select-pane -R
+
+# Set up my custom status-bar.
+
+#  set -g status-fg cyan
+#  set -g status-bg black
+#  set -g pane-border-fg black
+#  set -g pane-active-border-fg magenta
+#  set -g message-fg brightcyan
+#  set -g message-bg black
+#  set -g status-left "#S "
+#  set -g window-status-format "(#I)#W"
+#  set -g window-status-current-format "#[bold]#[fg=magenta](#I)#W"
