@@ -28,3 +28,5 @@
 	PS1prompt="\n$ "
 
 	export PS1="$PS1prefix$PS1userhost$PS1git$PS1path$PS1prompt"
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
