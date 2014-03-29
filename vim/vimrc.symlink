@@ -66,25 +66,13 @@
 " The colorscheme is desertEx can be toggled on/off by hitting <F5>.
 
   set background=dark
-  colorscheme desertEx 
+  colorscheme desertEx
 
   " Modifications
   highlight SignColumn ctermbg=8
   highlight EasyMotionShade ctermfg=0
   highlight IndentGuidesOdd ctermbg=8
   highlight IndentGuidesEven ctermbg=0
-
-  let s:comments_normal_contrast = 1
-  noremap <F7> :call <SID>ToggleCommentContrast()<CR>
-  function <SID>ToggleCommentContrast()
-    if s:comments_normal_contrast == 1
-      hi Comment ctermfg=0
-      let s:comments_normal_contrast = 0
-    else
-      hi Comment ctermfg=10
-      let s:comments_normal_contrast = 1
-    endif
-  endfunction
 
 
 " Highlight extraneous whitespace as red.
@@ -162,6 +150,10 @@
   nnoremap <leader>ev :vsplit $MYVIMRC<cr>
   nnoremap <leader>sv :source $MYVIMRC<cr>
 
+" disable mouse scrolling in insert mode
+  inoremap <ScrollWheelUp> <Nop> 
+  inoremap <ScrollWheelDown> <Nop> 
+
 " disable the arrow keys in vim
 
   noremap <Up> <nop>
@@ -172,6 +164,8 @@
   inoremap <Down> <nop>
   inoremap <Left> <nop>
   inoremap <Right> <nop>
+  inoremap <esc> <nop>
+  inoremap <c-[> <esc>
 
 " Natural up/down movement with wrapped lines.
 
@@ -205,5 +199,5 @@
 " Map a shortcut for NERDTree.
 
   inoremap <Leader>N :NERDTree
-  noremap <F2> :NERDTreeToggle<CR>
+  map <Leader>t :NERDTreeToggle<CR>
 
