@@ -32,6 +32,11 @@
   bind k select-pane -U
   bind l select-pane -R
 
+# move x clipboard into tmux paste buffer
+ bind C-p run "tmux set-buffer \"$(xclip -o)\"; tmux paste-buffer"
+# move tmux copy buffer into x clipboard
+ bind C-y run "tmux save-buffer - | xclip -i"
+
 # Set up my custom status-bar.
 # COLOUR (Solarized dark) slightly modified
 
