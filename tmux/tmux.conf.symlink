@@ -7,7 +7,7 @@
 
 # Set TERM up so that VIM colors look correct.
 
-  set -g default-terminal "screen-256color"
+  set -g default-terminal "xterm-256color"
 
 
 # Fix escape key issues.
@@ -36,7 +36,7 @@
 # COLOUR (Solarized dark) slightly modified
 
   # default statusbar colors
-  set -g status-bg colour235 #base02
+  set -g status-bg colour233 #base02
   set -g status-fg colour130 #yellow
   set -g status-attr default
 
