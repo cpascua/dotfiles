@@ -10,6 +10,7 @@
 # add reload shortcut.
 
 	alias reload=". $HOME/.profile"
+	alias term="gnome-terminal"
 
 
 # Load supporting files.
