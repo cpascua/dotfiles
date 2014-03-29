@@ -20,12 +20,6 @@
   set -g history-limit 2000
 
 
-# Have window and pane numbers start at 1 instead of 0.
-
-  set -g base-index 1
-  set -g pane-base-index 1
-
-
 # Set up Vim-like keybindings.
 
   set -g mode-keys vi
