@@ -32,6 +32,38 @@
   bind k select-pane -U
   bind l select-pane -R
 
+# COLOUR (Solarized dark) 
+
+  # default statusbar colors
+  set -g status-bg colour235 #base02
+  set -g status-fg colour130 #yellow
+  set -g status-attr default
+
+  # default window title colors
+  set -g window-status-fg colour33 #base0
+  set -g window-status-bg default
+  set -g window-status-attr dim
+
+  # active window title colors
+  set -g window-status-current-fg colour196 #orange
+  set -g window-status-current-bg default
+  set -g window-status-current-attr bright
+
+  # pane border
+  set -g pane-border-fg colour23 #base02
+  set -g pane-active-border-fg colour130 #base01
+
+  # message text
+  set -g message-bg colour235 #base02
+  set -g message-fg colour196 #orange
+
+  # pane number display
+  set -g display-panes-active-colour colour20 #blue
+  set -g display-panes-colour colour196 #orange
+
+  # clock
+  set -g clock-mode-colour colour40 #green
+
 # Set up my custom status-bar.
 
 #  set -g status-fg cyan
