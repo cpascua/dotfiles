@@ -1,0 +1,3 @@
+selectp -t 1          # Select pane 1
+splitw -h -p 67       # Split pane 1 vertically by 67%
+splitw -h -p 50       # Split pane 2 vertically by 50%
