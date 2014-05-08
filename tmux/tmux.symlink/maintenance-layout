@@ -29,16 +29,15 @@ splitw -h -p 50       # Split pane 6 vertically by 50%
 selectp -t 1          # Select pane 1
 send-keys 'ssh tracks' Enter
 selectp -t 2          # Select pane 2
-set -sg escape-time 2000
-send-keys 'ssh onslaught' Enter
+send-keys 'sleep 2; ssh onslaught' Enter
 selectp -t 3          # Select pane 3
-send-keys 'ssh scattershot' Enter
+send-keys 'sleep 4; ssh scattershot' Enter
 selectp -t 4          # Select pane 4
-send-keys 'ssh astrotrain' Enter
+send-keys 'sleep 6; ssh astrotrain' Enter
 selectp -t 6          # Select pane 6
-send-keys 'ssh app-server' Enter
+send-keys 'sleep 8; ssh app-server' Enter
 selectp -t 7          # Select pane 7
-send-keys 'ssh prod' Enter
+send-keys 'sleep 10; ssh prod' Enter
 selectp -t 8          # Select pane 8
 send-keys 'cd ~/workspace/tools/servers/amazon-web-services/staging' Enter
 selectp -t 9          # Select pane 9
