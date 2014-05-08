@@ -15,6 +15,13 @@
 
 # Load supporting files.
 
+if [ "$(uname)" == "Darwin" ]; then
+  source /usr/local/Cellar/git/1.9.2/etc/bash_completion.d/git-completion.bash
+  source /usr/local/Cellar/git/1.9.2/etc/bash_completion.d/git-prompt.sh
+#elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
+#  echo linux
+fi
+
 	[[ -s $HOME/dotfiles/bash/colors.sh ]] && . $HOME/dotfiles/bash/colors.sh
 
 # custom prompt.

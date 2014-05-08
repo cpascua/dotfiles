@@ -1,0 +1,46 @@
+selectp -t 1          # Select pane 1
+splitw -v -p 50       # Split pane 1 vertically by 50%
+selectp -t 1          # Select pane 1
+splitw -v -p 50       # Split pane 1 vertically by 50%
+selectp -t 1          # Select pane 1
+splitw -v -p 50       # Split pane 1 vertically by 50%
+selectp -t 4          # Select pane 4
+splitw -v -p 50       # Split pane 4 vertically by 50%
+selectp -t 5          # Select pane 5
+splitw -v -p 50       # Split pane 5 vertically by 50%
+selectp -t 4          # Select pane 4
+kill-pane
+selectp -t 4          # Select pane 4
+kill-pane
+selectp -t 3          # Select pane 3
+kill-pane
+selectp -t 1          # Select pane 1
+splitw -h -p 50       # Split pane 1 vertically by 50%
+selectp -t 1          # Select pane 1
+splitw -h -p 50       # Split pane 1 vertically by 50%
+selectp -t 3          # Select pane 3
+splitw -h -p 50       # Split pane 3 vertically by 50%
+selectp -t 6          # Select pane 6
+splitw -h -p 50       # Split pane 6 vertically by 50%
+selectp -t 7          # Select pane 7
+splitw -h -p 50       # Split pane 7 vertically by 50%
+selectp -t 6          # Select pane 6
+splitw -h -p 50       # Split pane 6 vertically by 50%
+selectp -t 1          # Select pane 1
+send-keys 'ssh tracks' Enter
+selectp -t 2          # Select pane 2
+set -sg escape-time 2000
+send-keys 'ssh onslaught' Enter
+selectp -t 3          # Select pane 3
+send-keys 'ssh scattershot' Enter
+selectp -t 4          # Select pane 4
+send-keys 'ssh astrotrain' Enter
+selectp -t 6          # Select pane 6
+send-keys 'ssh app-server' Enter
+selectp -t 7          # Select pane 7
+send-keys 'ssh prod' Enter
+selectp -t 8          # Select pane 8
+send-keys 'cd ~/workspace/tools/servers/amazon-web-services/staging' Enter
+selectp -t 9          # Select pane 9
+send-keys 'winrdp'
+set -sg escape-time 1

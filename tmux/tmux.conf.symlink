@@ -76,4 +76,5 @@
   set -g clock-mode-colour colour40 #green
 
   bind D source-file ~/.tmux/dev-layout
+  bind M source-file ~/.tmux/maintenance-layout
   bind V source-file ~/.tmux/vert-3-pane-layout
