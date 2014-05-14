@@ -1,0 +1,11 @@
+rename-window Maintenance-Catalina-Logs
+send-keys 'ssh -t hopkins tail -f /srv/www/tomcat/logs/catalina.out' Enter
+splitw -v -p 80       # Split pane 1 vertically by 50%
+send-keys 'sleep 1; ssh -t bremer tail -f /srv/www/tomcat/logs/catalina.out' Enter
+splitw -v -p 50       # Split pane 1 vertically by 50%
+send-keys 'sleep 2; ssh -t astrotrain tail -f /srv/www/tomcat/logs/catalina.out' Enter
+splitw -v -p 50       # Split pane 1 vertically by 50%
+send-keys 'sleep 3; ssh -t brawl tail -f /srv/www/tomcat/logs/catalina.out' Enter
+selectp -t 2          # Select pane 1
+splitw -v -p 50       # Split pane 1 vertically by 50%
+send-keys 'sleep 4; ssh -t cymric tail -f /srv/www/tomcat/logs/catalina.out' Enter

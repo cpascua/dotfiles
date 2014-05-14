@@ -1,0 +1,11 @@
+rename-window Maintenance-Sync-Logs
+send-keys 'ssh -t hopkins tail -f /var/log/synchronization-system/verbose.log ' Enter
+splitw -v -p 80       # Split pane 1 vertically by 50%
+send-keys 'sleep 1; ssh -t bremer tail -f /var/log/synchronization-system/verbose.log ' Enter
+splitw -v -p 50       # Split pane 1 vertically by 50%
+send-keys 'sleep 2; ssh -t astrotrain tail -f /var/log/synchronization-system/verbose.log ' Enter
+splitw -v -p 50       # Split pane 1 vertically by 50%
+send-keys 'sleep 3; ssh -t brawl tail -f /var/log/synchronization-system/verbose.log ' Enter
+selectp -t 2          # Select pane 1
+splitw -v -p 50       # Split pane 1 vertically by 50%
+send-keys 'sleep 4; ssh -t cymric tail -f /var/log/synchronization-system/verbose.log ' Enter

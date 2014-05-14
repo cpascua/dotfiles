@@ -1,4 +1,4 @@
-selectp -t 1          # Select pane 1
+rename-window Maintenance
 splitw -v -p 50       # Split pane 1 vertically by 50%
 selectp -t 1          # Select pane 1
 splitw -v -p 50       # Split pane 1 vertically by 50%
@@ -15,31 +15,23 @@ kill-pane
 selectp -t 3          # Select pane 3
 kill-pane
 selectp -t 1          # Select pane 1
-splitw -h -p 50       # Split pane 1 vertically by 50%
-selectp -t 1          # Select pane 1
-splitw -h -p 50       # Split pane 1 vertically by 50%
-selectp -t 3          # Select pane 3
-splitw -h -p 50       # Split pane 3 vertically by 50%
-selectp -t 6          # Select pane 6
-splitw -h -p 50       # Split pane 6 vertically by 50%
-selectp -t 7          # Select pane 7
-splitw -h -p 50       # Split pane 7 vertically by 50%
-selectp -t 6          # Select pane 6
-splitw -h -p 50       # Split pane 6 vertically by 50%
-selectp -t 1          # Select pane 1
 send-keys 'ssh tracks' Enter
-selectp -t 2          # Select pane 2
-send-keys 'sleep 2; ssh onslaught' Enter
-selectp -t 3          # Select pane 3
-send-keys 'sleep 4; ssh scattershot' Enter
-selectp -t 4          # Select pane 4
-send-keys 'sleep 6; ssh astrotrain' Enter
+splitw -h -p 50       # Split pane 1 horizontally by 50%
+send-keys 'sleep 1; ssh scattershot' Enter
+splitw -h -p 50       # Split pane 1 horizontally by 50%
+send-keys 'sleep 2; ssh astrotrain' Enter
+selectp -t 1          # Select pane 1
+splitw -h -p 50       # Split pane 1 horizontally  by 50%
+send-keys 'sleep 3; ssh onslaught' Enter
 selectp -t 6          # Select pane 6
-send-keys 'sleep 8; ssh app-server' Enter
-selectp -t 7          # Select pane 7
-send-keys 'sleep 10; ssh prod' Enter
-selectp -t 8          # Select pane 8
-send-keys 'cd ~/workspace/tools/servers/amazon-web-services/staging' Enter
-selectp -t 9          # Select pane 9
+send-keys 'sleep 4; ssh app-server' Enter
+splitw -h -p 50       # Split pane 6 horizontally by 50%
+send-keys 'sleep 5; ssh brawl' Enter
+splitw -h -p 50       # Split pane 6 horizontally by 50%
 send-keys 'winrdp'
+selectp -t 6          # Select pane 6
+splitw -h -p 50       # Split pane 7 horizontally by 50%
+send-keys 'sleep 6; ssh prod' Enter
+selectp -t 5         # Select pane 6
+send-keys 'cd ~/workspace/tools' Enter
 set -sg escape-time 1
