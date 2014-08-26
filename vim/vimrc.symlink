@@ -36,6 +36,9 @@
   Bundle "tpope/vim-fugitive"
   Bundle "tpope/vim-commentary"
 
+  " Supertab
+  Bundle "ervandew/supertab"
+
   " Niceties
   Bundle "Lokaltog/vim-powerline"
   Bundle "sjl/gundo.vim"
