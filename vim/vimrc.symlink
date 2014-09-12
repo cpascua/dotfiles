@@ -59,6 +59,9 @@
   Bundle "vim-scripts/groovy.vim"
   Bundle "groenewege/vim-less"
 
+    "mustache and hndlebars syntax highlighting
+  Bundle "mustache/vim-mustache-handlebars"
+
 
 " Enable syntax highlighting and filetype detection.
 

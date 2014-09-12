@@ -76,6 +76,7 @@
   set -g clock-mode-colour colour40 #green
 
   bind D source-file ~/.tmux/dev-layout
+  bind G source-file ~/.tmux/grunt-layout
   bind M source-file ~/.tmux/maintenance-layout
   bind S source-file ~/.tmux/maintenance-sync-layout
   bind C source-file ~/.tmux/maintenance-catalina-layout
