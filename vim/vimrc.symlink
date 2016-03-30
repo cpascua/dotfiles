@@ -35,6 +35,7 @@
   " Tim Pope
   Bundle "tpope/vim-fugitive"
   Bundle "tpope/vim-commentary"
+  Bundle "tpope/vim-fireplace"
 
   " Supertab
   Bundle "ervandew/supertab"
