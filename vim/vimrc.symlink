@@ -35,7 +35,24 @@
   " Tim Pope
   Bundle "tpope/vim-fugitive"
   Bundle "tpope/vim-commentary"
+  Bundle "tpope/vim-surround"
+
+  " Clojure Plugins
   Bundle "tpope/vim-fireplace"
+
+  Bundle "vim-scripts/VimClojure"
+  let g:vimclojure#HighlightBuiltins = 1
+  let g:vimclojure#ParenRainbow = 1
+
+  Bundle "guns/vim-clojure-static"
+  let g:clojure_fuzzy_indent_patterns = 'with.*,def.*,let.*'
+
+  "React
+  Bundle "pangloss/vim-javascript"
+  Bundle "mxw/vim-jsx"
+
+  let g:jsx_ext_required = 0 " Allow JSX in normal JS files
+  let g:syntastic_javascript_checkers = ['eslint']
 
   " Supertab
   Bundle "ervandew/supertab"
@@ -49,11 +66,12 @@
   Bundle "kien/ctrlp.vim"
   Bundle "scrooloose/syntastic"
 
-  Bundle "Raimondi/delimitMate"
+  " Auto parens
+  "Bundle "Raimondi/delimitMate"
     " By default, delimitMate clobbers Vim's timeout settings. This
     " causes a huge delay when trying to exit insert or visual mode
     " while in the terminal. Setting this option to 1 fixes that.
-    let g:delimitMate_no_esc_mapping = 1
+    "let g:delimitMate_no_esc_mapping = 1
 
   Bundle "kchmck/vim-coffee-script"
   Bundle 'vim-scripts/grails-vim'
@@ -68,7 +86,6 @@
 
   filetype plugin indent on
   syntax enable
-
 
 " The colorscheme is desertEx can be toggled on/off by hitting <F5>.
 
